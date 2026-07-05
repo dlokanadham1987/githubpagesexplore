@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GitHub Pages Explore</title>
+    <title>GitHub Pages Explore — A Beginner's Guide</title>
+    <meta name="description" content="A complete beginner's guide to GitHub Pages: what it is, what you can host, and a step-by-step deployment tutorial." />
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -11,81 +12,320 @@
         <nav class="nav">
             <div class="brand">GH Pages Explore</div>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#steps">Steps</a></li>
+                <li><a href="#what">What is it?</a></li>
+                <li><a href="#why">Why use it?</a></li>
+                <li><a href="#types">Site Types</a></li>
+                <li><a href="#kinds">Kinds of Sites</a></li>
+                <li><a href="#steps">Step-by-Step</a></li>
+                <li><a href="#custom">Custom Domain</a></li>
+                <li><a href="#limits">Limits</a></li>
                 <li><a href="#demo">Demo</a></li>
             </ul>
         </nav>
         <div class="hero-content">
-            <h1>Hosting a Website with <span class="accent">GitHub Pages</span></h1>
-            <p class="tagline">A simple sample site built with HTML, CSS, and JavaScript &mdash; hosted for free.</p>
-            <a class="cta" href="#steps">Learn How &rarr;</a>
+            <h1>A Beginner's Guide to <span class="accent">GitHub Pages</span></h1>
+            <p class="tagline">Everything you need to know to host your first website — for free — straight from a GitHub repository.</p>
+            <a class="cta" href="#steps">Jump to Step-by-Step Guide &rarr;</a>
         </div>
     </header>
 
     <main>
-        <section id="about" class="section">
-            <h2>What is GitHub Pages?</h2>
+        <!-- WHAT IS GITHUB PAGES -->
+        <section id="what" class="section">
+            <h2>1. What is GitHub Pages?</h2>
             <p>
-                <strong>GitHub Pages</strong> is a free static site hosting service from GitHub that turns
-                the content of a repository into a live website. It is ideal for personal sites, project
-                documentation, portfolios, and small marketing pages.
+                <strong>GitHub Pages</strong> is a free <em>static site hosting service</em> provided by GitHub.
+                It takes the files (HTML, CSS, JavaScript, images) stored in a GitHub repository and serves them
+                as a live website at a public URL — no server, no configuration, no cost.
             </p>
+            <p>
+                In simple words: whatever you put inside your GitHub repo, GitHub can automatically show it to
+                the world as a website. Every time you <code>git push</code> changes, the site rebuilds and
+                redeploys — usually within a minute.
+            </p>
+            <p>Your site will be published at one of these URL patterns:</p>
             <ul class="facts">
-                <li><strong>Free hosting</strong> directly from a GitHub repository.</li>
-                <li>Supports <strong>HTML, CSS, and JavaScript</strong> out of the box.</li>
-                <li>Built-in support for <strong>Jekyll</strong> for static site generation.</li>
-                <li>Custom domains and automatic <strong>HTTPS</strong> via Let's Encrypt.</li>
-                <li>Deploys straight from a branch (e.g. <code>main</code>) or a <code>/docs</code> folder.</li>
+                <li><strong>Project site:</strong> <code>https://&lt;username&gt;.github.io/&lt;repo-name&gt;/</code></li>
+                <li><strong>User site:</strong> <code>https://&lt;username&gt;.github.io/</code> (repo must be named <code>&lt;username&gt;.github.io</code>)</li>
+                <li><strong>Organization site:</strong> <code>https://&lt;org-name&gt;.github.io/</code></li>
             </ul>
+            <p class="callout">
+                <strong>This site itself</strong> is hosted on GitHub Pages at
+                <a href="https://dlokanadham1987.github.io/githubpagesexplore/" target="_blank" rel="noopener">
+                    https://dlokanadham1987.github.io/githubpagesexplore/
+                </a>
+            </p>
         </section>
 
-        <section id="features" class="section alt">
-            <h2>Key Features</h2>
+        <!-- WHY USE IT -->
+        <section id="why" class="section alt">
+            <h2>2. Why Use GitHub Pages?</h2>
             <div class="cards">
                 <div class="card">
-                    <h3>Zero Cost</h3>
-                    <p>Host your static site for free on GitHub's global infrastructure.</p>
+                    <h3>100% Free</h3>
+                    <p>No hosting fees, no credit card required. GitHub serves your site from its global CDN.</p>
                 </div>
                 <div class="card">
-                    <h3>Git-Powered</h3>
-                    <p>Every <code>git push</code> to your Pages branch redeploys the site automatically.</p>
-                </div>
-                <div class="card">
-                    <h3>Custom Domain</h3>
-                    <p>Point your own domain with a simple <code>CNAME</code> file.</p>
+                    <h3>Fast &amp; Reliable</h3>
+                    <p>Backed by GitHub's global infrastructure — pages load quickly from anywhere in the world.</p>
                 </div>
                 <div class="card">
                     <h3>HTTPS by Default</h3>
-                    <p>Sites are served over HTTPS with certificates managed for you.</p>
+                    <p>Every site gets a free TLS certificate from Let's Encrypt — automatically renewed.</p>
+                </div>
+                <div class="card">
+                    <h3>Git Workflow</h3>
+                    <p>Just <code>git push</code>. No FTP, no build servers to manage. Version control is built in.</p>
+                </div>
+                <div class="card">
+                    <h3>Custom Domain</h3>
+                    <p>Point your own domain (e.g. <code>myportfolio.com</code>) with a simple <code>CNAME</code> file.</p>
+                </div>
+                <div class="card">
+                    <h3>Jekyll Support</h3>
+                    <p>Built-in support for the Jekyll static site generator — great for blogs and docs.</p>
+                </div>
+                <div class="card">
+                    <h3>GitHub Actions</h3>
+                    <p>Use Actions to deploy any modern framework: React, Vue, Angular, Next.js (static export), Astro, Hugo, etc.</p>
+                </div>
+                <div class="card">
+                    <h3>Version History</h3>
+                    <p>Every change is tracked in Git — roll back to any previous version of your site instantly.</p>
                 </div>
             </div>
         </section>
 
+        <!-- STATIC vs DYNAMIC -->
+        <section id="types" class="section">
+            <h2>3. Static vs. Dynamic Sites — What GitHub Pages Supports</h2>
+            <p>
+                GitHub Pages hosts <strong>static websites only</strong>. Understanding this is important
+                before you start.
+            </p>
+
+            <h3 class="sub">What is a static site?</h3>
+            <p>
+                A static site is made of pre-built files (<code>.html</code>, <code>.css</code>,
+                <code>.js</code>, images) that are the same for every visitor. The server just serves the
+                file — no processing happens on the server side.
+            </p>
+
+            <h3 class="sub">What is a dynamic site?</h3>
+            <p>
+                A dynamic site runs code on a server for each request (PHP, Node.js, Python, Ruby, etc.),
+                often talking to a database, and generates a customized response.
+            </p>
+
+            <div class="compare">
+                <div class="compare-col ok">
+                    <h4>Supported by GitHub Pages</h4>
+                    <ul>
+                        <li>HTML, CSS, JavaScript</li>
+                        <li>Client-side frameworks (React, Vue, Angular, Svelte — as static builds)</li>
+                        <li>Static site generators (Jekyll, Hugo, Astro, 11ty, Gatsby, Next.js static export)</li>
+                        <li>Client-side API calls to external services (Firebase, Supabase, REST APIs)</li>
+                        <li>Markdown-based blogs and documentation</li>
+                    </ul>
+                </div>
+                <div class="compare-col not-ok">
+                    <h4>NOT Supported</h4>
+                    <ul>
+                        <li>Server-side languages (PHP, Node.js server, Python/Django, Ruby on Rails)</li>
+                        <li>Databases (MySQL, PostgreSQL, MongoDB) — no server to run them</li>
+                        <li>Server-side rendering that needs a live server (use static export instead)</li>
+                        <li>File uploads / server-side form processing (use a third-party service)</li>
+                        <li>Sites larger than 1 GB or with heavy traffic (soft limit ~100 GB/month bandwidth)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="note">
+                <strong>Tip:</strong> You <em>can</em> still have dynamic behavior on GitHub Pages — you just
+                need to do it in the browser with JavaScript, or call an external API/backend service (e.g.
+                Firebase, Supabase, a serverless function on Netlify/Vercel/Cloudflare Workers).
+            </p>
+        </section>
+
+        <!-- WHAT KIND OF SITES -->
+        <section id="kinds" class="section alt">
+            <h2>4. What Kinds of Websites Can You Deploy?</h2>
+            <p>Here are the most common types of sites people host on GitHub Pages:</p>
+            <div class="cards">
+                <div class="card">
+                    <h3>Personal Portfolio</h3>
+                    <p>Showcase your work, resume, and projects. Perfect for developers, designers, and writers.</p>
+                </div>
+                <div class="card">
+                    <h3>Project Documentation</h3>
+                    <p>Docs for open-source libraries, APIs, and tools — often built with Jekyll, Docsify, or MkDocs.</p>
+                </div>
+                <div class="card">
+                    <h3>Personal Blog</h3>
+                    <p>Markdown-based blogs powered by Jekyll or Hugo — write posts as <code>.md</code> files.</p>
+                </div>
+                <div class="card">
+                    <h3>Landing Pages</h3>
+                    <p>Product pages, event pages, "coming soon" pages, marketing microsites.</p>
+                </div>
+                <div class="card">
+                    <h3>Resume / CV Site</h3>
+                    <p>A single-page online resume you can share as a link with employers.</p>
+                </div>
+                <div class="card">
+                    <h3>Documentation Sites</h3>
+                    <p>Company handbooks, internal wikis (public), technical guides.</p>
+                </div>
+                <div class="card">
+                    <h3>Static Web Apps</h3>
+                    <p>Calculators, converters, games, tools written in HTML/CSS/JS or React/Vue/Svelte.</p>
+                </div>
+                <div class="card">
+                    <h3>Event / Conference Site</h3>
+                    <p>Schedule, speakers, ticket links (via external service like Eventbrite).</p>
+                </div>
+                <div class="card">
+                    <h3>Wedding / Invitation Site</h3>
+                    <p>Beautiful single-page sites with RSVP forms (using Google Forms or Formspree).</p>
+                </div>
+                <div class="card">
+                    <h3>Photo Gallery</h3>
+                    <p>Portfolio for photographers, artists, or hobbyists.</p>
+                </div>
+                <div class="card">
+                    <h3>Open Source Project Site</h3>
+                    <p>Home page for your library or framework, linking to GitHub, docs, downloads.</p>
+                </div>
+                <div class="card">
+                    <h3>Educational Tutorials</h3>
+                    <p>Course content, interactive lessons, code playgrounds.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP BY STEP GUIDE -->
         <section id="steps" class="section">
-            <h2>How to Host a Site on GitHub Pages</h2>
+            <h2>5. Step-by-Step Guide: Deploy Your First Site</h2>
+            <p>Follow these steps to publish your very first website on GitHub Pages.</p>
+
+            <h3 class="sub">Prerequisites</h3>
+            <ul class="facts">
+                <li>A free <a href="https://github.com" target="_blank" rel="noopener">GitHub account</a></li>
+                <li><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a> installed on your machine (optional if you use the web UI)</li>
+                <li>An <code>index.html</code> file (this is what the site loads by default)</li>
+            </ul>
+
+            <h3 class="sub">The 8 Steps</h3>
             <ol class="steps">
-                <li>Create a new public repository on GitHub.</li>
-                <li>Add your <code>index.html</code>, CSS, and JS files to the repo.</li>
-                <li>Commit and <code>git push</code> your changes to the <code>main</code> branch.</li>
-                <li>Open <em>Settings &rarr; Pages</em> in the repository.</li>
-                <li>Under <em>Build and deployment</em>, choose <strong>Deploy from a branch</strong>.</li>
-                <li>Select the <code>main</code> branch and <code>/ (root)</code> folder, then Save.</li>
-                <li>Wait a minute &mdash; your site is live at <code>https://&lt;user&gt;.github.io/&lt;repo&gt;/</code>.</li>
+                <li>
+                    <strong>Create a new GitHub repository.</strong><br />
+                    Go to <a href="https://github.com/new" target="_blank" rel="noopener">github.com/new</a>,
+                    give it a name (e.g. <code>my-first-site</code>), and set it to <strong>Public</strong>
+                    (private repos need a paid plan for Pages).
+                </li>
+                <li>
+                    <strong>Add your website files to the repo.</strong><br />
+                    Create an <code>index.html</code> at the root. Optionally add <code>styles.css</code>,
+                    <code>script.js</code>, and images. Example minimal <code>index.html</code>:
+                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;&lt;title&gt;My Site&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;&lt;h1&gt;Hello, GitHub Pages!&lt;/h1&gt;&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </li>
+                <li>
+                    <strong>Commit and push your files.</strong><br />
+                    From the command line:
+                    <pre><code>git init -b main
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/&lt;you&gt;/my-first-site.git
+git push -u origin main</code></pre>
+                    Or use "Add file &rarr; Upload files" in the GitHub web UI.
+                </li>
+                <li>
+                    <strong>Open the repository's Settings.</strong><br />
+                    In your repo on GitHub, click the <em>Settings</em> tab at the top.
+                </li>
+                <li>
+                    <strong>Go to the "Pages" section.</strong><br />
+                    In the left sidebar under <em>Code and automation</em>, click <strong>Pages</strong>.
+                </li>
+                <li>
+                    <strong>Choose your source.</strong><br />
+                    Under <em>Build and deployment &rarr; Source</em>, select
+                    <strong>"Deploy from a branch"</strong>. Then choose the <code>main</code> branch and
+                    <code>/ (root)</code> folder. Click <strong>Save</strong>.
+                </li>
+                <li>
+                    <strong>Wait for the deployment.</strong><br />
+                    GitHub will build your site — usually 30 seconds to 2 minutes. You can watch progress in
+                    the <em>Actions</em> tab.
+                </li>
+                <li>
+                    <strong>Visit your live site!</strong><br />
+                    Your site is now live at
+                    <code>https://&lt;your-username&gt;.github.io/&lt;repo-name&gt;/</code>.
+                    Any future <code>git push</code> to <code>main</code> will automatically redeploy it.
+                </li>
+            </ol>
+
+            <h3 class="sub">Optional: Deploy with a GitHub Action</h3>
+            <p>
+                For frameworks like React, Vue, or Astro, you'll want to build the site first. Use the built-in
+                <em>"GitHub Actions"</em> option in the Pages settings and pick a starter workflow, or write
+                your own <code>.github/workflows/deploy.yml</code>.
+            </p>
+        </section>
+
+        <!-- CUSTOM DOMAIN -->
+        <section id="custom" class="section alt">
+            <h2>6. Using a Custom Domain</h2>
+            <p>
+                Want your site at <code>www.mysite.com</code> instead of <code>*.github.io</code>? It's easy:
+            </p>
+            <ol class="steps">
+                <li>Buy a domain from any registrar (Namecheap, GoDaddy, Google Domains, Cloudflare, etc.).</li>
+                <li>In your repo, add a file named <code>CNAME</code> at the root containing just your domain: <code>www.mysite.com</code>.</li>
+                <li>
+                    At your DNS provider, add these records:
+                    <ul class="facts">
+                        <li><code>CNAME</code> record: <code>www</code> &rarr; <code>&lt;username&gt;.github.io</code></li>
+                        <li>Four <code>A</code> records for the apex domain pointing to:<br />
+                            <code>185.199.108.153</code>, <code>185.199.109.153</code>,
+                            <code>185.199.110.153</code>, <code>185.199.111.153</code></li>
+                    </ul>
+                </li>
+                <li>Back in <em>Settings &rarr; Pages</em>, enter your custom domain and check <strong>Enforce HTTPS</strong>.</li>
+                <li>Wait for DNS to propagate (a few minutes to a few hours) — done!</li>
             </ol>
         </section>
 
+        <!-- LIMITS -->
+        <section id="limits" class="section">
+            <h2>7. Limits &amp; Things to Know</h2>
+            <ul class="facts">
+                <li><strong>Repo size:</strong> should stay under 1 GB.</li>
+                <li><strong>Published site size:</strong> soft limit of 1 GB.</li>
+                <li><strong>Bandwidth:</strong> soft limit of 100 GB per month.</li>
+                <li><strong>Builds:</strong> soft limit of 10 builds per hour (per repo).</li>
+                <li><strong>Private repos:</strong> require GitHub Pro / Team / Enterprise for Pages.</li>
+                <li><strong>Prohibited:</strong> commercial gambling, illegal content, spam — see GitHub's <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages" target="_blank" rel="noopener">official docs</a> for full terms.</li>
+                <li><strong>No server code:</strong> only static files are served.</li>
+            </ul>
+        </section>
+
+        <!-- DEMO -->
         <section id="demo" class="section alt">
-            <h2>Interactive Demo</h2>
-            <p>Click the button to see JavaScript running on this GitHub Pages site.</p>
+            <h2>8. Interactive Demo</h2>
+            <p>This section proves that <strong>client-side JavaScript works</strong> perfectly on GitHub Pages.</p>
             <div class="demo">
                 <button id="greetBtn" class="cta">Say Hello</button>
                 <p id="greetMsg" class="greet-msg"></p>
                 <div class="counter">
-                    <button id="decBtn">-</button>
+                    <button id="decBtn" aria-label="decrease">-</button>
                     <span id="countVal">0</span>
-                    <button id="incBtn">+</button>
+                    <button id="incBtn" aria-label="increase">+</button>
                 </div>
                 <p id="timeStamp" class="time"></p>
             </div>
@@ -94,12 +334,18 @@
 
     <footer class="footer">
         <p>
-            Repository:
+            Source repository:
             <a href="https://github.com/dlokanadham1987/githubpagesexplore" target="_blank" rel="noopener">
                 dlokanadham1987/githubpagesexplore
             </a>
         </p>
-        <p>Built with HTML, CSS &amp; JavaScript &middot; Hosted on GitHub Pages</p>
+        <p>
+            Live site:
+            <a href="https://dlokanadham1987.github.io/githubpagesexplore/" target="_blank" rel="noopener">
+                dlokanadham1987.github.io/githubpagesexplore
+            </a>
+        </p>
+        <p>Built with plain HTML, CSS &amp; JavaScript &middot; Hosted for free on GitHub Pages</p>
     </footer>
 
     <script src="script.js"></script>
